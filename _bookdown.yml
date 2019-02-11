@@ -1,0 +1,7 @@
+book_filename: "IntroQuantitativeMethods"
+chapter_name: "Chapter "
+repo: https://github.com/toschw/bookdown-PADM604
+output_dir: "docs"
+rmd_files: ["index.Rmd", "01-Lecture.Rmd", "02-Lecture.Rmd", "03-Lecture.Rmd", "04-Lecture.Rmd"]
+clean: [packages.bib, bookdown.bbl]
+new_session: yes
