@@ -2,7 +2,7 @@
 title: "Introduction to Quantitative Research Methods for Public Administrators"
 author: "Tobias Schwoerer"
 date: "`r Sys.Date()`"
-bibliography: [book.bib]
+bibliography: book.bib
 description: Course content for lab portion of PADM604
 documentclass: book
 github-repo: toschw/bookdown-PADM604
