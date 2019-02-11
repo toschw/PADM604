@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="index.html">
-<link rel="next" href="lecture-2.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -133,9 +133,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.7.2" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#r-says-my-object-is-not-found"><i class="fa fa-check"></i><b>1.7.2</b> R says my object is not found</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="lecture-2.html"><a href="lecture-2.html"><i class="fa fa-check"></i><b>2</b> Lecture 2</a></li>
-<li class="chapter" data-level="3" data-path="lecture-3.html"><a href="lecture-3.html"><i class="fa fa-check"></i><b>3</b> Lecture 3</a></li>
-<li class="chapter" data-level="4" data-path="lecture-4.html"><a href="lecture-4.html"><i class="fa fa-check"></i><b>4</b> Lecture 4</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -344,7 +341,7 @@ x</code></pre></div>
 
 </div>
 <p><br></p>
-<p>Let’s go ahead and “Knit HTML” by clicking the blue yarn at the top of the RMarkdown file. When you first click this button, RStudio will prompt you to save this file. Create a new folder for it somewhere that you will be able to find again (such as your Desktop or Documents), and name that folder something you’ll remember (like <code>arctic_training_files</code>).</p>
+<p>Let’s go ahead and “Knit HTML” by clicking the blue yarn at the top of the RMarkdown file. When you first click this button, RStudio will prompt you to save this file. Create a new folder for it somewhere that you will be able to find again (such as your Desktop or Documents), and name that folder something you’ll remember (like <code>training_files</code>).</p>
 <p><br></p>
 <div class="figure">
 <img src="images/rmarkdown_side_by_side.png" />
@@ -427,11 +424,11 @@ x</code></pre>
 <div id="download-a-file-from-the-arctic-data-center" class="section level3">
 <h3><span class="header-section-number">1.5.1</span> Download a file from the Arctic Data Center</h3>
 <p>Navigate to this dataset by Craig Tweedie that is published on the Arctic Data Center. <a href="http://doi.org/10.18739/A25T3FZ8X">Craig Tweedie. 2009. North Pole Environmental Observatory Bottle Chemistry. Arctic Data Center. doi:10.18739/A25T3FZ8X.</a>, and download the first csv file called “BGchem2008data.csv”</p>
-<p>Move this file from your Downloads folder into a place you can more easily find it. I recommend creating a folder called <code>data</code> in your previously-created directory <code>arctic_training_files</code>, and putting the file there.</p>
+<p>Move this file from your Downloads folder into a place you can more easily find it. I recommend creating a folder called <code>data</code> in your previously-created directory <code>training_files</code>, and putting the file there.</p>
 </div>
 <div id="use-a-function-to-read-a-file-into-r" class="section level3">
 <h3><span class="header-section-number">1.5.2</span> Use a function to read a file into R</h3>
-<p>Now we have to tell <code>read.csv</code> how to find the file. We do this using the <code>file</code> argument which you can see in usage section in the help page. In RMarkdown, you can either use absolute paths (which will start with your home directory <code>~/</code>) or paths <strong>relative to the location of the RMarkdown.</strong> RStudio and RMarkdown have some great autocomplete capabilities when using relative paths, so we will go that route. Assuming you have moved your file to a folder within <code>arctic_training_files</code> called <code>data</code>, your <code>read.csv</code> call will look like this:</p>
+<p>Now we have to tell <code>read.csv</code> how to find the file. We do this using the <code>file</code> argument which you can see in usage section in the help page. In RMarkdown, you can either use absolute paths (which will start with your home directory <code>~/</code>) or paths <strong>relative to the location of the RMarkdown.</strong> RStudio and RMarkdown have some great autocomplete capabilities when using relative paths, so we will go that route. Assuming you have moved your file to a folder within <code>training_files</code> called <code>data</code>, your <code>read.csv</code> call will look like this:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bg_chem &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/BGchem2008data.csv&quot;</span>)</code></pre></div>
 <p>You should now have an object of the class <code>data.frame</code> in your environment called <code>bg_chem</code>. Check your environment pane to ensure this is true.</p>
 <p>Note that in the help page there are a whole bunch of arguments that we didn’t use in the call above. Some of the arguments in function calls are optional, and some are required. Optional arguments will be shown in the usage section with a <code>name = value</code> pair, with the default value shown. If you do not specify a <code>name = value</code> pair for that argument in your function call, the function will assume the default value (example: <code>header = TRUE</code> for <code>read.csv</code>). Required arguments will only show the name of the argument, without a value. Note that the only required argument for <code>read.csv</code> is <code>file</code>.</p>
@@ -448,7 +445,7 @@ x</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">??install </code></pre></div>
 <p>Not all functions have (or require) arguments:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">date</span>()</code></pre></div>
-<pre><code>## [1] &quot;Mon Feb 11 14:20:57 2019&quot;</code></pre>
+<pre><code>## [1] &quot;Mon Feb 11 14:37:23 2019&quot;</code></pre>
 </div>
 </div>
 <div id="using-data.frames" class="section level2">
@@ -508,8 +505,8 @@ x</code></pre>
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="lecture-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
