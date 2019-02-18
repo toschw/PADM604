@@ -1,7 +1,7 @@
 --- 
 title: "Introduction to Quantitative Research Methods for Public Administrators"
 author: "Tobias Schwoerer"
-date: "2019-02-11"
+date: "2019-02-18"
 bibliography: book.bib
 description: Course content for lab portion of PADM604
 documentclass: book
