@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 2 Lecture 2 | Introduction to Quantitative Research Methods for Public Administrators</title>
+  <meta name="description" content="Course content for lab portion of PADM604">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 2 Lecture 2 | Introduction to Quantitative Research Methods for Public Administrators" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://github.com/toschw/bookdown-PADM604" />
+  
+  <meta property="og:description" content="Course content for lab portion of PADM604" />
+  <meta name="github-repo" content="toschw/bookdown-PADM604" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Lecture 2 | Introduction to Quantitative Research Methods for Public Administrators" />
+  
+  <meta name="twitter:description" content="Course content for lab portion of PADM604" />
+  
+
+<meta name="author" content="Tobias Schwoerer">
+
+
+<meta name="date" content="2019-02-11">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="introduction-to-r-and-rmarkdown.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to Quantitative Research Methods</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html"><i class="fa fa-check"></i><b>1</b> Introduction to R and RMarkdown</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#learning-objectives"><i class="fa fa-check"></i><b>1.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#introduction-and-motivation"><i class="fa fa-check"></i><b>1.2</b> Introduction and Motivation</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#resources"><i class="fa fa-check"></i><b>1.2.1</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#r-at-the-console"><i class="fa fa-check"></i><b>1.3</b> R at the console</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#error-messages-are-your-friends"><i class="fa fa-check"></i><b>1.3.1</b> Error messages are your friends</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#logical-operators-and-expressions"><i class="fa fa-check"></i><b>1.3.2</b> Logical operators and expressions</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#clearing-the-environment"><i class="fa fa-check"></i><b>1.3.3</b> Clearing the environment</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#rmarkdown"><i class="fa fa-check"></i><b>1.4</b> RMarkdown</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#your-turn"><i class="fa fa-check"></i><b>1.4.1</b> Your Turn</a></li>
+<li class="chapter" data-level="1.4.2" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#code-chunks"><i class="fa fa-check"></i><b>1.4.2</b> Code chunks</a></li>
+<li class="chapter" data-level="1.4.3" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#your-turn-1"><i class="fa fa-check"></i><b>1.4.3</b> Your turn</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#r-functions-help-pages"><i class="fa fa-check"></i><b>1.5</b> R functions, help pages</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#download-a-file-from-the-arctic-data-center"><i class="fa fa-check"></i><b>1.5.1</b> Download a file from the Arctic Data Center</a></li>
+<li class="chapter" data-level="1.5.2" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#use-a-function-to-read-a-file-into-r"><i class="fa fa-check"></i><b>1.5.2</b> Use a function to read a file into R</a></li>
+<li class="chapter" data-level="1.5.3" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#your-turn-2"><i class="fa fa-check"></i><b>1.5.3</b> Your turn</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#using-data.frames"><i class="fa fa-check"></i><b>1.6</b> Using <code>data.frames</code></a><ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#your-turn-3"><i class="fa fa-check"></i><b>1.6.1</b> Your Turn</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#troubleshooting"><i class="fa fa-check"></i><b>1.7</b> Troubleshooting</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#i-just-entered-a-command-and-nothing-is-happening"><i class="fa fa-check"></i><b>1.7.1</b> I just entered a command and nothing is happening</a></li>
+<li class="chapter" data-level="1.7.2" data-path="introduction-to-r-and-rmarkdown.html"><a href="introduction-to-r-and-rmarkdown.html#r-says-my-object-is-not-found"><i class="fa fa-check"></i><b>1.7.2</b> R says my object is not found</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="lecture-2.html"><a href="lecture-2.html"><i class="fa fa-check"></i><b>2</b> Lecture 2</a><ul>
+<li class="chapter" data-level="2.1" data-path="lecture-2.html"><a href="lecture-2.html#rmarkdown-1"><i class="fa fa-check"></i><b>2.1</b> RMarkdown</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="lecture-2.html"><a href="lecture-2.html#your-turn-4"><i class="fa fa-check"></i><b>2.1.1</b> Your Turn</a></li>
+<li class="chapter" data-level="2.1.2" data-path="lecture-2.html"><a href="lecture-2.html#code-chunks-1"><i class="fa fa-check"></i><b>2.1.2</b> Code chunks</a></li>
+<li class="chapter" data-level="2.1.3" data-path="lecture-2.html"><a href="lecture-2.html#your-turn-5"><i class="fa fa-check"></i><b>2.1.3</b> Your turn</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="lecture-2.html"><a href="lecture-2.html#r-functions-help-pages-1"><i class="fa fa-check"></i><b>2.2</b> R functions, help pages</a></li>
+<li class="chapter" data-level="2.3" data-path="lecture-2.html"><a href="lecture-2.html#sampling-in-r"><i class="fa fa-check"></i><b>2.3</b> Sampling in R</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="lecture-2.html"><a href="lecture-2.html#download-a-sample-frame-for-pilots"><i class="fa fa-check"></i><b>2.3.1</b> Download a sample frame for pilots</a></li>
+<li class="chapter" data-level="2.3.2" data-path="lecture-2.html"><a href="lecture-2.html#use-a-function-to-read-a-file-into-r-1"><i class="fa fa-check"></i><b>2.3.2</b> Use a function to read a file into R</a></li>
+<li class="chapter" data-level="2.3.3" data-path="lecture-2.html"><a href="lecture-2.html#using-data.frames-1"><i class="fa fa-check"></i><b>2.3.3</b> Using <code>data.frames</code></a></li>
+<li class="chapter" data-level="2.3.4" data-path="lecture-2.html"><a href="lecture-2.html#subsetting-data-to-get-the-appropriate-sample-frame"><i class="fa fa-check"></i><b>2.3.4</b> Subsetting data to get the appropriate sample frame</a></li>
+<li class="chapter" data-level="2.3.5" data-path="lecture-2.html"><a href="lecture-2.html#your-turn-6"><i class="fa fa-check"></i><b>2.3.5</b> Your Turn!</a></li>
+<li class="chapter" data-level="2.3.6" data-path="lecture-2.html"><a href="lecture-2.html#calculating-sample-size"><i class="fa fa-check"></i><b>2.3.6</b> Calculating sample size</a></li>
+<li class="chapter" data-level="2.3.7" data-path="lecture-2.html"><a href="lecture-2.html#drawing-a-sample-of-size-ns-from-the-sample-frame-pilotsak"><i class="fa fa-check"></i><b>2.3.7</b> Drawing a sample of size Ns from the sample frame, pilotsAK</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduction to Quantitative Research Methods for Public Administrators</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="lecture-2" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Lecture 2</h1>
+<div id="rmarkdown-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> RMarkdown</h2>
+<p>Now that we know some basic R syntax, let’s learn a little about RMarkdown. You will drive yourself crazy (and fail to generate a reproducible workflow!) running code directly in the console. RMarkdown is really key for collaborative research, so we’re going to get started with it early and then use it for the rest of the course.</p>
+<p>An RMarkdown file will allow us to weave markdown text with chunks of R code to be evaluated and output content like tables and plots.</p>
+<p>File -&gt; New File -&gt; RMarkdown… -&gt; Document of output format HTML, OK.</p>
+<div style="width:300px">
+<div class="figure">
+<img src="images/rstudio_new-rmd-doc-html.png" />
+
+</div>
+</div>
+<p>You can give it a Title like “My Project”. Then click OK.</p>
+<p>OK, first off: by opening a file, we are seeing the 4th pane of the RStudio console, which is essentially a text editor. This lets us organize our files within RStudio instead of having a bunch of different windows open.</p>
+<p>Let’s have a look at this file — it’s not blank; there is some initial text is already provided for you. Notice a few things about it:</p>
+<ul>
+<li>There are white and grey sections. R code is in grey sections, and other text is in white.</li>
+</ul>
+<div class="figure">
+<img src="images/rmarkdown.png" />
+
+</div>
+<p><br></p>
+<p>Let’s go ahead and “Knit HTML” by clicking the blue yarn at the top of the RMarkdown file. When you first click this button, RStudio will prompt you to save this file. Create a new folder for it somewhere that you will be able to find again (such as your Desktop or Documents), and name that folder something you’ll remember (like <code>training_files</code>).</p>
+<p><br></p>
+<div class="figure">
+<img src="images/rmarkdown_side_by_side.png" />
+
+</div>
+<p>What do you notice between the two?</p>
+<p>Notice how the grey <strong>R code chunks</strong> are surrounded by 3 backticks and <code>{r LABEL}</code>. These are evaluated and return the output in form of an html file, that you could host on a website for example or print into a pdf or word document if you like.</p>
+<p>Here, R shows you two examples related to two of its example datasets that come with the R language, <code>cars</code> and <code>pressure</code>. The output for <code>summary(cars)</code> shows the descriptive statistics for the two variables in the car dataset, <code>speed</code> and <code>distance</code>. The figure below generates a scatterplot from the <code>pressure</code> dataset, showing the vapor pressure of mercury (in millimeters) as a function of temperature in degrees Celsius.The output plot shows the relationship between the two variables.</p>
+<p>Notice how the code <code>plot(pressure)</code> is not shown in the HTML output because of the R code chunk option <code>echo=FALSE</code> written at the beginning of the code chunk like this <code>{r, echo=FALSE}</code>.</p>
+<p>More details…</p>
+<p>This RMarkdown file has 2 different languages within it: <strong>R</strong> and <strong>Markdown</strong>.</p>
+<p>We don’t know that much R yet, but you can see that we are taking a summary of some data called ‘cars’, and then plotting. There’s a lot more to learn about R, and we’ll get into it for the next few days.</p>
+<p>The second language is Markdown. This is a formatting language for plain text, and there are only about 15 rules to know.</p>
+<p>Notice the syntax for:</p>
+<ul>
+<li><strong>headers</strong> get rendered at multiple levels: <code>#</code>, <code>##</code></li>
+<li><strong>bold</strong>: <code>**word**</code></li>
+</ul>
+<p>There are some good <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet">cheatsheets</a> to get you started, and here is one built into RStudio: Go to Help &gt; Markdown Quick Reference <br /> <br /></p>
+<p><strong>Important</strong>: note that the hashtag <code>#</code> is used differently in Markdown and in R:</p>
+<ul>
+<li>in R, a hashtag indicates a comment that will not be evaluated. You can use as many as you want: <code>#</code> is equivalent to <code>######</code>. It’s just a matter of style.</li>
+<li>in Markdown, a hashtag indicates a level of a header. And the number you use matters: <code>#</code> is a “level one header”, meaning the biggest font and the top of the hierarchy. <code>###</code> is a level three header, and will show up nested below the <code>#</code> and <code>##</code> headers.</li>
+</ul>
+<p>Learn more: <a href="http://rmarkdown.rstudio.com/" class="uri">http://rmarkdown.rstudio.com/</a></p>
+<div id="your-turn-4" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Your Turn</h3>
+<ol style="list-style-type: decimal">
+<li>In Markdown, Write some italic text, and make a numbered list. And add a few subheaders. Use the Markdown Quick Reference (in the menu bar: Help &gt; Markdown Quick Reference).</li>
+<li>Reknit your html file.</li>
+</ol>
+</div>
+<div id="code-chunks-1" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Code chunks</h3>
+<p>OK. Now let’s practice with some of those commands.</p>
+<p>Create a new chunk in your RMarkdown first in one of these ways:</p>
+<ul>
+<li>click “Insert &gt; R” at the top of the editor pane</li>
+<li>type by hand ```{r} ```</li>
+<li>if you haven’t deleted a chunk that came with the new file, edit that one</li>
+</ul>
+<p>Now, let’s write some R code.</p>
+<pre><code>x &lt;- 4*3
+x</code></pre>
+<p>Now, hitting return does not execute this command; remember, it’s just a text file. To execute it, we need to get what we typed in the the R chunk (the grey R code) down into the console. How do we do it? There are several ways (let’s do each of them):</p>
+<ol style="list-style-type: decimal">
+<li>copy-paste this line into the console.</li>
+<li>select the line (or simply put the cursor there), and click ‘Run’. This is available from
+<ol style="list-style-type: lower-alpha">
+<li>the bar above the file (green arrow)</li>
+<li>the menu bar: Code &gt; Run Selected Line(s)</li>
+<li>keyboard shortcut: command-return</li>
+</ol></li>
+<li>click the green arrow at the right of the code chunk</li>
+</ol>
+</div>
+<div id="your-turn-5" class="section level3">
+<h3><span class="header-section-number">2.1.3</span> Your turn</h3>
+<p>Add a few more commands to your file. Execute them by trying the three ways above. Then, save your R Markdown file.</p>
+</div>
+</div>
+<div id="r-functions-help-pages-1" class="section level2">
+<h2><span class="header-section-number">2.2</span> R functions, help pages</h2>
+<p>So far we’ve learned some of the basic syntax and concepts of R programming, how to navigate RStudio, and RMarkdown, but we haven’t done any complicated or interesting programming processes yet. This is where functions come in!</p>
+<p>R has a mind-blowing collection of built-in functions that are used with the same syntax: function name with parentheses around what the function needs in order to do what it was built to do. When you type a function like this, we say we are “calling the function”. <code>function_name(argument1 = value1, argument2 = value2, ...)</code>.</p>
+<p>As our first function, we will introduce <code>read.csv</code>, which will be in the first lines of many of your future scripts. It does exactly what it says, it reads in a csv file to R, but we don’t quite know how to use it yet. The help pages in RStudio will help us with this!</p>
+<p>To access the help page for <code>read.csv</code>, enter the following into your console:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?read.csv</code></pre></div>
+<p>The help pane will show up in the lower right hand corner of your RStudio.</p>
+<p>You can see from this pane that the help page for this function is actually for a family of related functions that read in data. The help page tells the name of the package in the top left, and is broken down into sections:</p>
+<ul>
+<li>Description: An extended description of what the function does.</li>
+<li>Usage: The arguments of the function(s) and their default values.</li>
+<li>Arguments: An explanation of the data each argument is expecting.</li>
+<li>Details: Any important details to be aware of.</li>
+<li>Value: The data the function returns.</li>
+<li>See Also: Any related functions you might find useful.</li>
+<li>Examples: Some examples for how to use the function.</li>
+</ul>
+<p>The help for <code>read.csv</code> has a lot of information in it, as this function has a lot of arguments, but the first one seems pretty critical. We have to tell it what file to look for. Let’s get a file!</p>
+</div>
+<div id="sampling-in-r" class="section level2">
+<h2><span class="header-section-number">2.3</span> Sampling in R</h2>
+<p>Let’s conduct a survey with pilots who reside in Alaska. For that, we first need a sample frame and then create a sample.</p>
+<div id="download-a-sample-frame-for-pilots" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Download a sample frame for pilots</h3>
+<p>The Federal Aviation Administration (FAA) publishes the contact information for pilots on its website here: <a href="https://www.faa.gov/licenses_certificates/airmen_certification/releasable_airmen_download/">FAA Airmen Certification Database</a>, and download <a href="http://registry.faa.gov/database/CS022019.zip">this zip file</a> to your downloads folder.</p>
+<p>Unzip the folder and move the <code>PILOT_BASIC.csv</code> file into a place you can easily find it. I recommend creating a folder called <code>data</code> in your previously-created directory <code>training_files</code>, and putting the file there.</p>
+</div>
+<div id="use-a-function-to-read-a-file-into-r-1" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Use a function to read a file into R</h3>
+<p>Now we have to tell <code>read.csv</code> how to find the file. We do this using the <code>file</code> argument which you can see in usage section in the help page. In RMarkdown, you can either use absolute paths (which will start with your home directory <code>~/</code>) or paths <strong>relative to the location of the RMarkdown.</strong> RStudio and RMarkdown have some great autocomplete capabilities when using relative paths, so we will go that route. Assuming you have moved your file to a folder within <code>training_files</code> called <code>data</code>, your <code>read.csv</code> call will look like this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pilots &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/PILOT_BASIC.csv&quot;</span>)</code></pre></div>
+<p>You should now have an object of the class <code>data.frame</code> in your environment called <code>pilots</code>. Check your environment pane to ensure this is true. How many pilots are in this dataframe?</p>
+<p>Note that in the help page there are a whole bunch of arguments that we didn’t use in the call above. Some of the arguments in function calls are optional, and some are required. Optional arguments will be shown in the usage section with a <code>name = value</code> pair, with the default value shown. If you do not specify a <code>name = value</code> pair for that argument in your function call, the function will assume the default value (example: <code>header = TRUE</code> for <code>read.csv</code>). Required arguments will only show the name of the argument, without a value. Note that the only required argument for <code>read.csv</code> is <code>file</code>.</p>
+<p>Many R users (including myself) will override the default <code>stringsAsFactors</code> argument. The following code will turn all character variables into character strings. read.csv(“data/PILOT_BASIC.csv”, stringsAsFactors = FALSE)</p>
+<p>And there’s also help for when you only sort of remember the function name: double-questionmark:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">??install </code></pre></div>
+<p>Not all functions have (or require) arguments:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">date</span>()</code></pre></div>
+<pre><code>## [1] &quot;Mon Feb 18 14:08:16 2019&quot;</code></pre>
+</div>
+<div id="using-data.frames-1" class="section level3">
+<h3><span class="header-section-number">2.3.3</span> Using <code>data.frames</code></h3>
+<p>A <code>data.frame</code> is a two dimensional data structure in R that mimics spreadsheet behavior. It is a collection of rows and columns of data, where each column has a name and represents a variable, and each row represents a measurement of that variable. When we ran <code>read.csv</code>, the object <code>pilots</code> that we created is a <code>data.frame</code>. There are a bunch of ways R and RStudio help you explore data frames. Here are a few, give them each a try:</p>
+<ul>
+<li>click on the word <code>pilots</code> in the environment pane</li>
+<li>click on the arrow next to <code>pilots</code> in the environment pane</li>
+<li>execute <code>head(pilots)</code> in the console</li>
+<li>execute <code>View(pilots)</code> in the console</li>
+</ul>
+</div>
+<div id="subsetting-data-to-get-the-appropriate-sample-frame" class="section level3">
+<h3><span class="header-section-number">2.3.4</span> Subsetting data to get the appropriate sample frame</h3>
+<p>Let’s say we are interested in conducting a survey with pilots who reside in Alaska. Then we need to subset this national database into a dataset that includes just pilots who reside in Alaska.To do this we need to know how Alaska residents are coded. It looks like the STATE variable will help. But there Alaska could be coded in any way. Check the metadata that comes with the dataset on the website, or use the following code to see how Alaska may be coded. This code will return all the unique values in the STATE variable.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">unique</span>(pilots<span class="op">$</span>STATE)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pilotsAK &lt;-<span class="st"> </span><span class="kw">subset</span>(pilots,STATE<span class="op">==</span><span class="st">&quot;AK&quot;</span>)</code></pre></div>
+<p>How large is our population of pilots?</p>
+</div>
+<div id="your-turn-6" class="section level3">
+<h3><span class="header-section-number">2.3.5</span> Your Turn!</h3>
+<p>Use the function nrow() to find out.</p>
+</div>
+<div id="calculating-sample-size" class="section level3">
+<h3><span class="header-section-number">2.3.6</span> Calculating sample size</h3>
+<p>First we need to calculate the desired sample size for which we need the following: <code>Np</code> - population size <code>prop</code> - proportion of population expected to choose one of two response categories: If we don’t know about these expectations, we assume prop = 0.5 for a 50/50 split. Then we are more conservative (get a larger required sample) than assuming a 80/20 split. <code>serror</code> - acceptable amount of sampling error of the true population value, let’s set it at 3% <code>conf</code> - confidence level, also called p-value, let’s say 95%. For calculations we use the decimal 0.95</p>
+<p>Let’s first declare the values for each of the variables above.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Np &lt;-<span class="st"> </span><span class="dv">7663</span>
+prop &lt;-<span class="st"> </span><span class="fl">0.5</span>
+serror &lt;-<span class="st"> </span><span class="fl">0.03</span>
+conf &lt;-<span class="st"> </span><span class="fl">0.95</span></code></pre></div>
+<p>The confidence level will give us the <code>z-score</code> or <code>z-statistic</code> which we will need for calculating the sample size. For a 95% confidence interval, you want to know how many standard deviations away from the mean your point estimate is (the “z-score”). To get that, you take off the 5% “tails”. Working in percentile form you have 1-.95 which yields a value 0.05. Divide that in half to get 0.025. So we basically do this: <code>(1-conf)/2</code>.</p>
+<p>In R, use the <code>qnorm</code> function to get the “critical value”. Since you only care about one “side” of the curve (the values on either side are mirror images of each other) and you want a positive number, pass the argument lower.tail=FALSE.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">zscore &lt;-<span class="st"> </span><span class="kw">qnorm</span>((<span class="dv">1</span><span class="op">-</span>conf)<span class="op">/</span><span class="dv">2</span>,<span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<p>For a 95% confidence interval this should be about 1.96</p>
+<p>Now we are ready to calculate the sample size, Ns</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Ns &lt;-<span class="st"> </span>Np <span class="op">*</span><span class="st"> </span>prop <span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>prop)<span class="op">/</span>((Np<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(serror<span class="op">/</span>zscore)<span class="op">^</span><span class="dv">2</span><span class="op">+</span>prop<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>prop))
+Ns</code></pre></div>
+<pre><code>## [1] 936.7516</code></pre>
+</div>
+<div id="drawing-a-sample-of-size-ns-from-the-sample-frame-pilotsak" class="section level3">
+<h3><span class="header-section-number">2.3.7</span> Drawing a sample of size Ns from the sample frame, pilotsAK</h3>
+<p>First we are going to install the sampling package that let’s us draw a random sample without replacement. Install the <code>sampling</code> package or by typing install.packages(sampling) in the console.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(sampling)
+<span class="kw">library</span>(sampling)
+<span class="kw">library</span>(dplyr)</code></pre></div>
+<p>Now we need to create the simple random sample without replacement, for our first letter mail out</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sam.srswor2 &lt;-<span class="st"> </span><span class="kw">srswor</span>(<span class="dt">n=</span>Ns,<span class="dt">N=</span>Np)
+sample.srswor2 &lt;-<span class="st"> </span>pilotsAK[<span class="kw">which</span>(<span class="dt">x=</span>(sam.srswor2 <span class="op">==</span><span class="dv">1</span>)),]</code></pre></div>
+<p>Finally, we select just the columns needed for names and addresses and save the file as a csv so we can share it and open in Excel for mailmerge, etc.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mailout &lt;-<span class="st"> </span><span class="kw">select</span>(sample.srswor2, FIRST.NAME, LAST.NAME, STREET.<span class="dv">1</span>, CITY, ZIP.CODE)
+
+<span class="kw">write.csv</span>(mailout,<span class="st">&quot;data/mailout.csv&quot;</span>)</code></pre></div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-to-r-and-rmarkdown.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
