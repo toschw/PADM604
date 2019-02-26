@@ -473,7 +473,7 @@ cities_df <- data.frame(city = c("Juneau AK",
                                  "Anchorage AK"),
                         stringsAsFactors = FALSE)
 
-# Write your solution here
+# Write your solution into your RMarkdown document
 ```
 
 `unite()` does just the reverse of `separate()`:
@@ -484,10 +484,10 @@ dates_df %>%
   unite(date, month, day, year, sep = "/")
 ```
 
-- **Exercise:** Use `unite()` on your solution above to combine the `cities_df` back to its original form with just one column, `city`:
+- **Exercise 7:** Use `unite()` on your solution above to combine the `cities_df` back to its original form with just one column, `city`:
 
 ```{r}
-# Write your solution here
+# Write your solution into your RMarkdown document
 ```
 
 ## Summary
