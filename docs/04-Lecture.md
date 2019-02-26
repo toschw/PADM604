@@ -1,4 +1,4 @@
-# Lecture 4: Data Cleaning and Manipulation
+# Lecture 4 -  Data Cleaning and Manipulation
 
 ## Learning Objectives
 
@@ -662,25 +662,25 @@ catch_df %>%
 
 ```
 ## # A tibble: 18 x 6
-##    Region total_catch mgmtArea       areaClass regionCode notes           
-##    <chr>        <dbl> <chr>          <chr>          <int> <chr>           
-##  1 ALU       17567000 Aleutian Isla~ subarea            4 ""              
-##  2 BER        8350000 Bering River ~ subarea            2 ""              
-##  3 BRB     1544584000 Bristol Bay M~ mgmtArea           2 ""              
-##  4 CHG      173518000 Chignik Manag~ mgmtArea           4 ""              
-##  5 CKI      358875000 Cook Inlet Ma~ mgmtArea           2 Cook Inlet incl~
-##  6 COP       84235000 Copper River ~ subarea            2 ""              
-##  7 GSE       54875000 Unallocated S~ mgmtArea           1 "Included are S~
-##  8 KOD      886443000 Kodiak Manage~ mgmtArea           4 ""              
-##  9 KSK       28748000 Kuskokwim Man~ mgmtArea           3 ""              
-## 10 KTZ        7817000 Kotzebue Mana~ mgmtArea           3 ""              
-## 11 NOP      105567000 NorthPeninsua~ subarea            4 ""              
-## 12 NRS        9528000 Norton Sound ~ mgmtArea           3 ""              
-## 13 NSE     1049387000 Northern Sout~ mgmtArea           1 Northern Southe~
-## 14 PWS      773484000 Prince Willia~ subarea            2 ""              
-## 15 SOP      499924000 South Peninsu~ subarea            4 ""              
-## 16 SSE     1783410000 Southern Sout~ mgmtArea           1 ""              
-## 17 YAK       44123000 Yakutat        mgmtArea           1 ""              
+##    Region total_catch mgmtArea       areaClass regionCode notes            
+##    <chr>        <dbl> <chr>          <chr>          <int> <chr>            
+##  1 ALU       17567000 Aleutian Isla~ subarea            4 ""               
+##  2 BER        8350000 Bering River ~ subarea            2 ""               
+##  3 BRB     1544584000 Bristol Bay M~ mgmtArea           2 ""               
+##  4 CHG      173518000 Chignik Manag~ mgmtArea           4 ""               
+##  5 CKI      358875000 Cook Inlet Ma~ mgmtArea           2 Cook Inlet inclu~
+##  6 COP       84235000 Copper River ~ subarea            2 ""               
+##  7 GSE       54875000 Unallocated S~ mgmtArea           1 "Included are So~
+##  8 KOD      886443000 Kodiak Manage~ mgmtArea           4 ""               
+##  9 KSK       28748000 Kuskokwim Man~ mgmtArea           3 ""               
+## 10 KTZ        7817000 Kotzebue Mana~ mgmtArea           3 ""               
+## 11 NOP      105567000 NorthPeninsua~ subarea            4 ""               
+## 12 NRS        9528000 Norton Sound ~ mgmtArea           3 ""               
+## 13 NSE     1049387000 Northern Sout~ mgmtArea           1 Northern Souther~
+## 14 PWS      773484000 Prince Willia~ subarea            2 ""               
+## 15 SOP      499924000 South Peninsu~ subarea            4 ""               
+## 16 SSE     1783410000 Southern Sout~ mgmtArea           1 ""               
+## 17 YAK       44123000 Yakutat        mgmtArea           1 ""               
 ## 18 YUK       27115000 Yukon Managem~ mgmtArea           3 ""
 ```
 
@@ -791,24 +791,24 @@ catch_df %>%
 
 ```
 ## # A tibble: 18 x 6
-##    Region mean_catch mgmtArea       areaClass regionCode notes            
-##    <chr>       <dbl> <chr>          <chr>          <int> <chr>            
-##  1 ALU          40.4 Aleutian Isla~ subarea            4 ""               
-##  2 BER          16.4 Bering River ~ subarea            2 ""               
-##  3 BRB        2710.  Bristol Bay M~ mgmtArea           2 ""               
-##  4 CHG         315.  Chignik Manag~ mgmtArea           4 ""               
-##  5 CKI         684.  Cook Inlet Ma~ mgmtArea           2 Cook Inlet inclu~
-##  6 COP         179.  Copper River ~ subarea            2 ""               
-##  7 GSE         134.  Unallocated S~ mgmtArea           1 "Included are So~
-##  8 KOD        1528.  Kodiak Manage~ mgmtArea           4 ""               
-##  9 KSK          67.6 Kuskokwim Man~ mgmtArea           3 ""               
-## 10 KTZ          18.8 Kotzebue Mana~ mgmtArea           3 ""               
-## 11 NOP         229.  NorthPeninsua~ subarea            4 ""               
-## 12 NRS          51.5 Norton Sound ~ mgmtArea           3 ""               
-## 13 NSE        1825.  Northern Sout~ mgmtArea           1 Northern Souther~
-## 14 PWS        1419.  Prince Willia~ subarea            2 ""               
-## 15 SOP        1111.  South Peninsu~ subarea            4 ""               
-## 16 SSE        3185.  Southern Sout~ mgmtArea           1 ""               
-## 17 YAK          91.9 Yakutat        mgmtArea           1 ""               
-## 18 YUK          68.6 Yukon Managem~ mgmtArea           3 ""
+##    Region mean_catch mgmtArea        areaClass regionCode notes            
+##    <chr>       <dbl> <chr>           <chr>          <int> <chr>            
+##  1 ALU          40.4 Aleutian Islan~ subarea            4 ""               
+##  2 BER          16.4 Bering River S~ subarea            2 ""               
+##  3 BRB        2710.  Bristol Bay Ma~ mgmtArea           2 ""               
+##  4 CHG         315.  Chignik Manage~ mgmtArea           4 ""               
+##  5 CKI         684.  Cook Inlet Man~ mgmtArea           2 Cook Inlet inclu~
+##  6 COP         179.  Copper River S~ subarea            2 ""               
+##  7 GSE         134.  Unallocated So~ mgmtArea           1 "Included are So~
+##  8 KOD        1528.  Kodiak Managem~ mgmtArea           4 ""               
+##  9 KSK          67.6 Kuskokwim Mana~ mgmtArea           3 ""               
+## 10 KTZ          18.8 Kotzebue Manag~ mgmtArea           3 ""               
+## 11 NOP         229.  NorthPeninsual~ subarea            4 ""               
+## 12 NRS          51.5 Norton Sound M~ mgmtArea           3 ""               
+## 13 NSE        1825.  Northern South~ mgmtArea           1 Northern Souther~
+## 14 PWS        1419.  Prince William~ subarea            2 ""               
+## 15 SOP        1111.  South Peninsul~ subarea            4 ""               
+## 16 SSE        3185.  Southern South~ mgmtArea           1 ""               
+## 17 YAK          91.9 Yakutat         mgmtArea           1 ""               
+## 18 YUK          68.6 Yukon Manageme~ mgmtArea           3 ""
 ```

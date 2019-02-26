@@ -1,4 +1,4 @@
-# Lecture 3: Data Modeling & Tidy Data
+# Lecture 3 - Data Modeling & Tidy Data
 
 ## Learning Objectives
 

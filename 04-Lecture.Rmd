@@ -1,4 +1,4 @@
-# Lecture 4: Data Cleaning and Manipulation
+# Lecture 4 -  Data Cleaning and Manipulation
 
 ## Learning Objectives
 
