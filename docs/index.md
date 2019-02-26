@@ -1,15 +1,15 @@
 --- 
 title: "Introduction to Quantitative Research Methods for Public Administrators"
 author: "Tobias Schwoerer"
-date: "2019-02-18"
+date: "2019-02-25"
 bibliography: book.bib
 description: Course content for lab portion of PADM604
 documentclass: book
-github-repo: toschw/bookdown-PADM604
+github-repo: toschw/PADM604
 link-citations: yes
 site: bookdown::bookdown_site
 biblio-style: apalike
-url: https://github.com/toschw/bookdown-PADM604
+url: https://github.com/toschw/PADM604
 ---
 
 # Preface {-}

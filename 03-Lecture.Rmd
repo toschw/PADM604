@@ -136,7 +136,6 @@ For the INNER join, the rows returned are all rows in A that have a matching row
 
 ## Data modeling assignment
 
-
 For this assignment you will be working with a tidied up version of a dataset from the Alaska Department of Fish and Game (ADF&G) containing commercial salmon catch data from 1878-1997.
 
 The dataset and reference to the original source can be viewed at its public archive: https://knb.ecoinformatics.org/#view/df35b.304.2.

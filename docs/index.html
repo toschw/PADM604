@@ -11,10 +11,10 @@
 
   <meta property="og:title" content="Introduction to Quantitative Research Methods for Public Administrators" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/toschw/bookdown-PADM604" />
+  <meta property="og:url" content="https://github.com/toschw/PADM604" />
   
   <meta property="og:description" content="Course content for lab portion of PADM604" />
-  <meta name="github-repo" content="toschw/bookdown-PADM604" />
+  <meta name="github-repo" content="toschw/PADM604" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Introduction to Quantitative Research Methods for Public Administrators" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Tobias Schwoerer">
 
 
-<meta name="date" content="2019-02-18">
+<meta name="date" content="2019-02-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -48,6 +48,14 @@
 
 
 
+<script src="libs/htmlwidgets-1.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.5/datatables.js"></script>
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.16/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.16/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.0.0/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.0.0/js/crosstalk.min.js"></script>
 
 
 
@@ -109,6 +117,41 @@
 <li class="chapter" data-level="2.2.4" data-path="lecture-2.html"><a href="lecture-2.html#subsetting-data-to-get-the-appropriate-sample-frame"><i class="fa fa-check"></i><b>2.2.4</b> Subsetting data to get the appropriate sample frame</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="3" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html"><i class="fa fa-check"></i><b>3</b> Lecture 3 - Data Modeling &amp; Tidy Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#learning-objectives-1"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#benefits-of-relational-data-systems"><i class="fa fa-check"></i><b>3.2</b> Benefits of relational data systems</a></li>
+<li class="chapter" data-level="3.3" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#data-organization"><i class="fa fa-check"></i><b>3.3</b> Data Organization</a></li>
+<li class="chapter" data-level="3.4" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#multiple-tables"><i class="fa fa-check"></i><b>3.4</b> Multiple tables</a></li>
+<li class="chapter" data-level="3.5" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#inconsistent-observations"><i class="fa fa-check"></i><b>3.5</b> Inconsistent observations</a></li>
+<li class="chapter" data-level="3.6" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#inconsistent-variables"><i class="fa fa-check"></i><b>3.6</b> Inconsistent variables</a></li>
+<li class="chapter" data-level="3.7" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#marginal-sums-and-statistics"><i class="fa fa-check"></i><b>3.7</b> Marginal sums and statistics</a></li>
+<li class="chapter" data-level="3.8" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#good-enough-data-modeling"><i class="fa fa-check"></i><b>3.8</b> Good enough data modeling</a><ul>
+<li class="chapter" data-level="3.8.1" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#denormalized-data"><i class="fa fa-check"></i><b>3.8.1</b> Denormalized data</a></li>
+<li class="chapter" data-level="3.8.2" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#tabular-data"><i class="fa fa-check"></i><b>3.8.2</b> Tabular data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#primary-and-foreign-keys"><i class="fa fa-check"></i><b>3.9</b> Primary and Foreign Keys</a></li>
+<li class="chapter" data-level="3.10" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#entity-relationship-model-er"><i class="fa fa-check"></i><b>3.10</b> Entity-Relationship Model (ER)</a></li>
+<li class="chapter" data-level="3.11" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#merging-data"><i class="fa fa-check"></i><b>3.11</b> Merging data</a></li>
+<li class="chapter" data-level="3.12" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#simple-guidelines-for-effective-data"><i class="fa fa-check"></i><b>3.12</b> Simple Guidelines for Effective Data</a></li>
+<li class="chapter" data-level="3.13" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#data-modeling-assignment"><i class="fa fa-check"></i><b>3.13</b> Data modeling assignment</a></li>
+<li class="chapter" data-level="3.14" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#related-resources"><i class="fa fa-check"></i><b>3.14</b> Related resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html"><i class="fa fa-check"></i><b>4</b> Lecture 4 - Data Cleaning and Manipulation</a><ul>
+<li class="chapter" data-level="4.1" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#learning-objectives-2"><i class="fa fa-check"></i><b>4.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#introduction"><i class="fa fa-check"></i><b>4.2</b> Introduction</a></li>
+<li class="chapter" data-level="4.3" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#setup"><i class="fa fa-check"></i><b>4.3</b> Setup</a></li>
+<li class="chapter" data-level="4.4" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#about-the-pipe-operator"><i class="fa fa-check"></i><b>4.4</b> About the pipe (<code>%&gt;%</code>) operator</a></li>
+<li class="chapter" data-level="4.5" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#selectingremoving-columns-select"><i class="fa fa-check"></i><b>4.5</b> Selecting/removing columns: <code>select()</code></a></li>
+<li class="chapter" data-level="4.6" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#changing-shape-gather-and-spread"><i class="fa fa-check"></i><b>4.6</b> Changing shape: <code>gather()</code> and <code>spread()</code></a></li>
+<li class="chapter" data-level="4.7" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#renaming-columns-with-rename"><i class="fa fa-check"></i><b>4.7</b> Renaming columns with <code>rename()</code></a></li>
+<li class="chapter" data-level="4.8" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#adding-columns-mutate"><i class="fa fa-check"></i><b>4.8</b> Adding columns: <code>mutate()</code></a></li>
+<li class="chapter" data-level="4.9" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#group_by-and-summarise"><i class="fa fa-check"></i><b>4.9</b> <code>group_by</code> and <code>summarise</code></a></li>
+<li class="chapter" data-level="4.10" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#filtering-rows-filter"><i class="fa fa-check"></i><b>4.10</b> Filtering rows: <code>filter()</code></a></li>
+<li class="chapter" data-level="4.11" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#sorting-your-data-arrange"><i class="fa fa-check"></i><b>4.11</b> Sorting your data: <code>arrange()</code></a></li>
+<li class="chapter" data-level="4.12" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#joins-in-dplyr"><i class="fa fa-check"></i><b>4.12</b> Joins in dplyr</a></li>
+<li class="chapter" data-level="4.13" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#separate-and-unite"><i class="fa fa-check"></i><b>4.13</b> <code>separate()</code> and <code>unite()</code></a></li>
+<li class="chapter" data-level="4.14" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#summary"><i class="fa fa-check"></i><b>4.14</b> Summary</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -132,7 +175,7 @@
 <div id="header">
 <h1 class="title">Introduction to Quantitative Research Methods for Public Administrators</h1>
 <p class="author"><em>Tobias Schwoerer</em></p>
-<p class="date"><em>2019-02-18</em></p>
+<p class="date"><em>2019-02-25</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
