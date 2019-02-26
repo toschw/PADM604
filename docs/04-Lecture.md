@@ -9,6 +9,12 @@ In this lesson, you will learn:
 - How to use `dplyr` and `tidyr` to clean and manipulate data for analysis
 - How to join multiple `data.frame`s together using `dplyr`
 
+Let's make sure we have these packages installed on our computers. Use this code to install both. 
+
+```r
+install.packages(c("dplyr","tidyr"))
+```
+
 ## Introduction
 
 The data we get to work with are rarely, if ever, in the format we need to do our analyses.
@@ -341,7 +347,7 @@ summary(catch_df)
 ##                     Max.   :1997
 ```
 
-- **Exercise:** What are some other ways (functions) we could've found out what our problem was?
+- **Exercise 1:** What are some other ways (functions) we could've found out what our problem was?
 
 Notice in the above output that the `catch_thousands` column shows up as `Class :character`.
 That seems wrong since catch should be whole numbers (in R, these show up as integers).
@@ -482,8 +488,8 @@ catch_df %>%
 ## 18 YUK           68646.
 ```
 
-- **Exercise:** Find another grouping and statistic to calculate for each group.
-- **Exercise:** Find out if you can group by multiple variables.
+- **Exercise 2:** Find another grouping and statistic to calculate for each group.
+- **Exercise 3:** Find out if you can group by multiple variables.
 
 Another common use of `group_by()` followed by `summarize()` is to count the number of rows in each group.
 We have to use a special function from `dplyr`, `n()`.
@@ -543,8 +549,8 @@ catch_df %>%
 ## 6    SSE 1891 Chinook     0
 ```
 
-- **Exercise:** Filter to just catches of over one million fish.
-- **Exercise:** Filter to just SSE Chinook
+- **Exercise 4:** Filter to just catches of over one million fish.
+- **Exercise 5:** Filter to just SSE Chinook
 
 ## Sorting your data: `arrange()`
 
@@ -730,7 +736,7 @@ dates_df %>%
 ## 5     5  28 1930
 ```
 
-- **Exercise:** Split the `city` column in the following `data.frame` into `city` and `state_code` columns:
+- **Exercise 6:** Split the `city` column in the following `data.frame` into `city` and `state_code` columns:
 
 
 ```r

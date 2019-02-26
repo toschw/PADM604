@@ -11,10 +11,10 @@
 
   <meta property="og:title" content="Chapter 4 Lecture 4 - Data Cleaning and Manipulation | Introduction to Quantitative Research Methods for Public Administrators" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://github.com/toschw/bookdown-PADM604" />
+  <meta property="og:url" content="https://github.com/toschw/PADM604" />
   
   <meta property="og:description" content="Course content for lab portion of PADM604" />
-  <meta name="github-repo" content="toschw/bookdown-PADM604" />
+  <meta name="github-repo" content="toschw/PADM604" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Chapter 4 Lecture 4 - Data Cleaning and Manipulation | Introduction to Quantitative Research Methods for Public Administrators" />
@@ -25,7 +25,7 @@
 <meta name="author" content="Tobias Schwoerer">
 
 
-<meta name="date" content="2019-02-18">
+<meta name="date" content="2019-02-25">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -154,7 +154,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.2.4" data-path="lecture-2.html"><a href="lecture-2.html#subsetting-data-to-get-the-appropriate-sample-frame"><i class="fa fa-check"></i><b>2.2.4</b> Subsetting data to get the appropriate sample frame</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html"><i class="fa fa-check"></i><b>3</b> Lecture 3: Data Modeling &amp; Tidy Data</a><ul>
+<li class="chapter" data-level="3" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html"><i class="fa fa-check"></i><b>3</b> Lecture 3 - Data Modeling &amp; Tidy Data</a><ul>
 <li class="chapter" data-level="3.1" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#learning-objectives-1"><i class="fa fa-check"></i><b>3.1</b> Learning Objectives</a></li>
 <li class="chapter" data-level="3.2" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#benefits-of-relational-data-systems"><i class="fa fa-check"></i><b>3.2</b> Benefits of relational data systems</a></li>
 <li class="chapter" data-level="3.3" data-path="lecture-3-data-modeling-tidy-data.html"><a href="lecture-3-data-modeling-tidy-data.html#data-organization"><i class="fa fa-check"></i><b>3.3</b> Data Organization</a></li>
@@ -220,6 +220,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>How to use <code>dplyr</code> and <code>tidyr</code> to clean and manipulate data for analysis</li>
 <li>How to join multiple <code>data.frame</code>s together using <code>dplyr</code></li>
 </ul>
+<p>Let’s make sure we have these packages installed on our computers. Use this code to install both.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">&quot;dplyr&quot;</span>,<span class="st">&quot;tidyr&quot;</span>))</code></pre></div>
 </div>
 <div id="introduction" class="section level2">
 <h2><span class="header-section-number">4.2</span> Introduction</h2>
@@ -530,7 +532,7 @@ df_selected &lt;- select(df_filtered, ...)</code></pre>
 ##                     3rd Qu.:1972                                        
 ##                     Max.   :1997</code></pre>
 <ul>
-<li><strong>Exercise:</strong> What are some other ways (functions) we could’ve found out what our problem was?</li>
+<li><strong>Exercise 1:</strong> What are some other ways (functions) we could’ve found out what our problem was?</li>
 </ul>
 <p>Notice in the above output that the <code>catch_thousands</code> column shows up as <code>Class :character</code>. That seems wrong since catch should be whole numbers (in R, these show up as integers).</p>
 <p>Let’s try to convert the values to integers and see what happens:</p>
@@ -609,8 +611,8 @@ df_selected &lt;- select(df_filtered, ...)</code></pre>
 ## 17 YAK           91923.
 ## 18 YUK           68646.</code></pre>
 <ul>
-<li><strong>Exercise:</strong> Find another grouping and statistic to calculate for each group.</li>
-<li><strong>Exercise:</strong> Find out if you can group by multiple variables.</li>
+<li><strong>Exercise 2:</strong> Find another grouping and statistic to calculate for each group.</li>
+<li><strong>Exercise 3:</strong> Find out if you can group by multiple variables.</li>
 </ul>
 <p>Another common use of <code>group_by()</code> followed by <code>summarize()</code> is to count the number of rows in each group. We have to use a special function from <code>dplyr</code>, <code>n()</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">catch_df <span class="op">%&gt;%</span><span class="st"> </span>
@@ -653,8 +655,8 @@ df_selected &lt;- select(df_filtered, ...)</code></pre>
 ## 5    SSE 1890 Chinook     0
 ## 6    SSE 1891 Chinook     0</code></pre>
 <ul>
-<li><strong>Exercise:</strong> Filter to just catches of over one million fish.</li>
-<li><strong>Exercise:</strong> Filter to just SSE Chinook</li>
+<li><strong>Exercise 4:</strong> Filter to just catches of over one million fish.</li>
+<li><strong>Exercise 5:</strong> Filter to just SSE Chinook</li>
 </ul>
 </div>
 <div id="sorting-your-data-arrange" class="section level2">
@@ -785,7 +787,7 @@ dates_df <span class="op">%&gt;%</span><span class="st"> </span>
 ## 4     5  27 1930
 ## 5     5  28 1930</code></pre>
 <ul>
-<li><strong>Exercise:</strong> Split the <code>city</code> column in the following <code>data.frame</code> into <code>city</code> and <code>state_code</code> columns:</li>
+<li><strong>Exercise 6:</strong> Split the <code>city</code> column in the following <code>data.frame</code> into <code>city</code> and <code>state_code</code> columns:</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cities_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">city =</span> <span class="kw">c</span>(<span class="st">&quot;Juneau AK&quot;</span>, 
                                  <span class="st">&quot;Sitka AK&quot;</span>, 
