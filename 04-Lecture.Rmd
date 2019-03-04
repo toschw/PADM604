@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Lecture 4 -  Data Cleaning and Manipulation
 
 ## Learning Objectives
@@ -510,3 +515,4 @@ catch_df %>%
   summarize(mean_catch = mean(catch)) %>% 
   left_join(region_defs, by = c("Region" = "code"))
 ```
+

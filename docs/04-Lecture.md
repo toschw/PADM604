@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Lecture 4 -  Data Cleaning and Manipulation
 
 ## Learning Objectives
@@ -745,7 +750,7 @@ cities_df <- data.frame(city = c("Juneau AK",
                                  "Anchorage AK"),
                         stringsAsFactors = FALSE)
 
-# Write your solution here
+# Write your solution into your RMarkdown document
 ```
 
 `unite()` does just the reverse of `separate()`:
@@ -766,11 +771,11 @@ dates_df %>%
 ## 5 5/28/1930
 ```
 
-- **Exercise:** Use `unite()` on your solution above to combine the `cities_df` back to its original form with just one column, `city`:
+- **Exercise 7:** Use `unite()` on your solution above to combine the `cities_df` back to its original form with just one column, `city`:
 
 
 ```r
-# Write your solution here
+# Write your solution into your RMarkdown document
 ```
 
 ## Summary
@@ -818,3 +823,4 @@ catch_df %>%
 ## 17 YAK          91.9 Yakutat         mgmtArea           1 ""               
 ## 18 YUK          68.6 Yukon Manageme~ mgmtArea           3 ""
 ```
+
