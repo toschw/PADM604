@@ -1,0 +1,116 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Lecture 6 -  Data visualization for web-based maps
+
+## Learning Objectives
+
+In this lesson, you will learn:
+
+- A quick overview of producing nice visualizations in R with `ggplot`
+- How to create interactive maps with `leaflet`
+
+
+## Example
+
+First, let's start a brand new RMarkdown document name it, and save it somewhere you can remember such a project folder. 
+
+Then, get some data. We'll use salmon escapement data from the Alaska Department of Fish and Game. 
+
+- Navigate to [Escapement Counts](https://knb.ecoinformatics.org/#view/urn:uuid:c14d3e59-e5e3-4696-996d-558446b577fd) and copy the Download URL for the `ADFG_firstAttempt_reformatted.csv` file
+- Download that file into R using `read.csv` to make the script portable
+- Calculate median annual escapement by species using the `dplyr` package
+- Make a bar plot of the median annual escapement by species using the `ggplot2` package
+- Display it in an interactive table with the `datatable` function from the `DT` package
+- And lastly, let's make an interactive, map of the escapement sampling locations.
+
+To do this, we'll use the [`leaflet`](https://rstudio.github.io/leaflet/) package to create an interactive map with markers for all the sampling locations:
+
+First, let's load the packages we'll need:
+
+```{r, eval = FALSE}
+suppressPackageStartupMessages({
+  library(leaflet)
+  library(dplyr)
+  library(tidyr)
+  library(ggplot2)
+  library(DT)
+})
+```
+
+### Load salmon escapement data
+
+You can load the data table directly from the KNB Data Repository, if it isn't
+already present on your local computer.  This technique 
+
+```{r, eval = FALSE}
+esc <- read.csv("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/knb.92020.1", stringsAsFactors = FALSE)
+```
+
+### Plot median escapement
+
+Now that we have the data loaded, let's calculate median annual escapement by species:
+
+```{r, eval = FALSE}
+median_esc <- esc %>% 
+  separate(sampleDate, c("Year", "Month", "Day"), sep = "-") %>% 
+  group_by(Species, SASAP.Region, Year, Location) %>% 
+  summarize(escapement = sum(DailyCount)) %>% 
+  group_by(Species) %>% 
+  summarize(median_escapement = median(escapement))
+
+head(median_esc)
+```
+
+That command used a lot of the dplyr commands that we've used, and some that are new.
+The `separate` function is used to divide the sampleDate column up into Year, Month, and Day columns, and then we use `group_by` to indicate that we want to calculate our results for the unique combinations of species, region, year, and location.  We next use `summarize` to calculate an escapement value for each of these groups, which we then proceed to further group by species to caluclate the median for each species.
+
+Now, let's plot our results:
+
+```{r, eval = FALSE}
+ggplot(median_esc, aes(Species, median_escapement)) +
+  geom_col() +
+  coord_flip()
+```
+
+Now let's convert the escapement data into a table of just the unique locations:
+
+```{r, eval = FALSE}
+locations <- esc %>% 
+  distinct(Location, Latitude, Longitude) %>% 
+  drop_na()
+```
+
+
+Then making a leaflet map is (generally) only a couple of lines of code:
+
+```{r, eval = FALSE}
+leaflet(locations) %>% 
+  addTiles() %>% 
+  addMarkers(~ Longitude, ~ Latitude, popup = ~ Location)
+```
+
+The `addTiles()` function gets a base layer of tiles from [OpenStreetMap](https://www.openstreetmap.org/) which is an open alternative to Google Maps.
+`addMarkers` use a bit of an odd syntax but make sure you type the `~` for your map to work.
+
+This map hopefully gives you an idea of how powerful RMarkdown can be. ...and it makes a problem with these data much more obvious than in tabular form. Do you see all those points way over in Russia? This is an Alaska data set. Those data points aren't supposed to be located in Russia. Can you guess why they're showing up over there? If you glance through the coordinates in the `locations` table above it should become obvious. You could also simply look at the descriptive statistics for the data such as:
+```{r, eval = FALSE}
+summary(esc)
+```
+The Longtitude column has a negative minumum and a positive maximum. Since Alaska is West of the Greenwich Meridian (the 0 degree line of longtitude) all values in the Longtitude column must be negative. If we would have only Russian locations, all Longtitude values would be positive because they are East (right) of the Greenwich Meridian.    
+
+Here's how to fix it:
+
+```{r, eval = FALSE}
+locs <- locations %>% mutate(Longitude = abs(Longitude) * -1)
+
+leaflet(locs) %>% 
+  addTiles() %>% 
+  addMarkers(~ Longitude, ~ Latitude, popup = ~ Location)
+```
+
+You can publish these interactive maps on the web for free by using GitHub. If you are interested, check out ![here] (https://rstudio.github.io/leaflet/).
+
+
