@@ -824,3 +824,70 @@ catch_df %>%
 ## 18 YUK          68.6 Yukon Manageme~ mgmtArea           3 ""
 ```
 
+##Solutions to Exercises
+**Exercise 1:**
+To find out what data type the catch_thousand variable was, you can click blue arrow button next to the object in the environment (upper right of RStudio). Another option is with the `class` function. Using `class` requires us to specify the data object and the variable `object$variable` with the `$`. The `summary` function is shorter as it only needs the object and returns the type for all variables in that object.  
+
+```r
+class(catch_df$catch_thousands)
+```
+
+**Exercise 2:**
+Below we show the maxium catch by species. To not overwrite our `catch_df` dataframe we create a new object calling it `catch_df2`
+
+```r
+catch_df2 <- catch_df %>%
+  group_by(species) %>%
+  summarise(max(catch))
+```
+
+**Exercise 3:**
+Grouping by region and species calculating the mean annual catch. Again, I keep the initial dataframe `catch_df` and create a new one that contains the new table. 
+
+```r
+catch_df3 <- catch_df %>%
+  group_by(Region,species) %>%
+  summarise(mean(catch))
+```
+
+**Exercise 4:**
+Filtering to just catch > 1 million fish. 
+
+```r
+catch_df5 <- catch_df %>%
+  filter(catch > 1000000)
+```
+
+**Exercise 5:**
+Filtering to just SSE Chinook 
+
+```r
+catch_df6 <- catch_df %>%
+  filter(Region =="SSE" & species == "Chinook")
+```
+
+**Exercise 6:**
+Remember, this command creates the `cities_df` data.frame so you need to run it first. 
+
+```r
+cities_df <- data.frame(city = c("Juneau AK", 
+                                 "Sitka AK", 
+                                 "Anchorage AK"),
+                        stringsAsFactors = FALSE)
+```
+
+If you need to split the city column into a `city` and `state` column you can do it with the `separate` function, where the first argument is the object, followed by the names you want for the columns to split `city` into, and lastly you need to specify what R needs to look for when splitting. In this example it is `sep= " "` as in space  Remember, check the help if you don't know how to specify a function.   
+
+```r
+cities_df2 <- cities_df %>% 
+  separate(city, c("city", "state"), " ")
+```
+ 
+**Exercise 7:**
+Uniting back to one column 
+
+```r
+cities_df3 <- cities_df2 %>% 
+    unite(city, city, state, sep = " ")
+```
+

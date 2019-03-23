@@ -25,7 +25,7 @@
 <meta name="author" content="Tobias Schwoerer">
 
 
-<meta name="date" content="2019-02-25">
+<meta name="date" content="2019-03-04">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="lecture-3-data-modeling-tidy-data.html">
-
+<link rel="next" href="lecture-5-regression.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -188,6 +188,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.12" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#joins-in-dplyr"><i class="fa fa-check"></i><b>4.12</b> Joins in dplyr</a></li>
 <li class="chapter" data-level="4.13" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#separate-and-unite"><i class="fa fa-check"></i><b>4.13</b> <code>separate()</code> and <code>unite()</code></a></li>
 <li class="chapter" data-level="4.14" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#summary"><i class="fa fa-check"></i><b>4.14</b> Summary</a></li>
+<li class="chapter" data-level="4.15" data-path="lecture-4-data-cleaning-and-manipulation.html"><a href="lecture-4-data-cleaning-and-manipulation.html#solutions-to-exercises"><i class="fa fa-check"></i><b>4.15</b> Solutions to Exercises</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="lecture-5-regression.html"><a href="lecture-5-regression.html"><i class="fa fa-check"></i><b>5</b> Lecture 5 - Regression</a><ul>
+<li class="chapter" data-level="5.1" data-path="lecture-5-regression.html"><a href="lecture-5-regression.html#learning-objectives-3"><i class="fa fa-check"></i><b>5.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="lecture-5-regression.html"><a href="lecture-5-regression.html#regression-example"><i class="fa fa-check"></i><b>5.2</b> Regression example</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="lecture-6-data-visualization-for-web-based-maps.html"><a href="lecture-6-data-visualization-for-web-based-maps.html"><i class="fa fa-check"></i><b>6</b> Lecture 6 - Data visualization for web-based maps</a><ul>
+<li class="chapter" data-level="6.1" data-path="lecture-6-data-visualization-for-web-based-maps.html"><a href="lecture-6-data-visualization-for-web-based-maps.html#learning-objectives-4"><i class="fa fa-check"></i><b>6.1</b> Learning Objectives</a></li>
+<li class="chapter" data-level="6.2" data-path="lecture-6-data-visualization-for-web-based-maps.html"><a href="lecture-6-data-visualization-for-web-based-maps.html#example"><i class="fa fa-check"></i><b>6.2</b> Example</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="lecture-6-data-visualization-for-web-based-maps.html"><a href="lecture-6-data-visualization-for-web-based-maps.html#load-salmon-escapement-data"><i class="fa fa-check"></i><b>6.2.1</b> Load salmon escapement data</a></li>
+<li class="chapter" data-level="6.2.2" data-path="lecture-6-data-visualization-for-web-based-maps.html"><a href="lecture-6-data-visualization-for-web-based-maps.html#plot-median-escapement"><i class="fa fa-check"></i><b>6.2.2</b> Plot median escapement</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -847,6 +859,36 @@ catch_df <span class="op">%&gt;%</span>
 ## 16 SSE        3185.  Southern South~ mgmtArea           1 &quot;&quot;               
 ## 17 YAK          91.9 Yakutat         mgmtArea           1 &quot;&quot;               
 ## 18 YUK          68.6 Yukon Manageme~ mgmtArea           3 &quot;&quot;</code></pre>
+</div>
+<div id="solutions-to-exercises" class="section level2">
+<h2><span class="header-section-number">4.15</span> Solutions to Exercises</h2>
+<p><strong>Exercise 1:</strong> To find out what data type the catch_thousand variable was, you can click blue arrow button next to the object in the environment (upper right of RStudio). Another option is with the <code>class</code> function. Using <code>class</code> requires us to specify the data object and the variable <code>object$variable</code> with the <code>$</code>. The <code>summary</code> function is shorter as it only needs the object and returns the type for all variables in that object.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(catch_df<span class="op">$</span>catch_thousands)</code></pre></div>
+<p><strong>Exercise 2:</strong> Below we show the maxium catch by species. To not overwrite our <code>catch_df</code> dataframe we create a new object calling it <code>catch_df2</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">catch_df2 &lt;-<span class="st"> </span>catch_df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(species) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="kw">max</span>(catch))</code></pre></div>
+<p><strong>Exercise 3:</strong> Grouping by region and species calculating the mean annual catch. Again, I keep the initial dataframe <code>catch_df</code> and create a new one that contains the new table.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">catch_df3 &lt;-<span class="st"> </span>catch_df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">group_by</span>(Region,species) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="kw">mean</span>(catch))</code></pre></div>
+<p><strong>Exercise 4:</strong> Filtering to just catch &gt; 1 million fish.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">catch_df5 &lt;-<span class="st"> </span>catch_df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(catch <span class="op">&gt;</span><span class="st"> </span><span class="dv">1000000</span>)</code></pre></div>
+<p><strong>Exercise 5:</strong> Filtering to just SSE Chinook</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">catch_df6 &lt;-<span class="st"> </span>catch_df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(Region <span class="op">==</span><span class="st">&quot;SSE&quot;</span> <span class="op">&amp;</span><span class="st"> </span>species <span class="op">==</span><span class="st"> &quot;Chinook&quot;</span>)</code></pre></div>
+<p><strong>Exercise 6:</strong> Remember, this command creates the <code>cities_df</code> data.frame so you need to run it first.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cities_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">city =</span> <span class="kw">c</span>(<span class="st">&quot;Juneau AK&quot;</span>, 
+                                 <span class="st">&quot;Sitka AK&quot;</span>, 
+                                 <span class="st">&quot;Anchorage AK&quot;</span>),
+                        <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<p>If you need to split the city column into a <code>city</code> and <code>state</code> column you can do it with the <code>separate</code> function, where the first argument is the object, followed by the names you want for the columns to split <code>city</code> into, and lastly you need to specify what R needs to look for when splitting. In this example it is <code>sep= &quot; &quot;</code> as in space Remember, check the help if you don’t know how to specify a function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cities_df2 &lt;-<span class="st"> </span>cities_df <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">separate</span>(city, <span class="kw">c</span>(<span class="st">&quot;city&quot;</span>, <span class="st">&quot;state&quot;</span>), <span class="st">&quot; &quot;</span>)</code></pre></div>
+<p><strong>Exercise 7:</strong> Uniting back to one column</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cities_df3 &lt;-<span class="st"> </span>cities_df2 <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">    </span><span class="kw">unite</span>(city, city, state, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>)</code></pre></div>
 
 </div>
 </div>
@@ -855,8 +897,8 @@ catch_df <span class="op">%&gt;%</span>
           </div>
         </div>
       </div>
-<a href="lecture-3-data-modeling-tidy-data.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="lecture-3-data-modeling-tidy-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="lecture-5-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
