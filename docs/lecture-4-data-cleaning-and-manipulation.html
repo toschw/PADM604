@@ -862,6 +862,11 @@ catch_df <span class="op">%&gt;%</span>
 </div>
 <div id="solutions-to-exercises" class="section level2">
 <h2><span class="header-section-number">4.15</span> Solutions to Exercises</h2>
+<p><strong>Data modeling assignment at end of Lecture 3</strong> The ER model should look like this where code is the primary key in the region_def table and links to the Region column (foreign key) in the catch table. One region code in the region_def table is assigned to each of many records in the catch table.</p>
+<div class="figure">
+<img src="images/ERmodel.JPG" alt="ER model`" />
+<p class="caption">ER model`</p>
+</div>
 <p><strong>Exercise 1:</strong> To find out what data type the catch_thousand variable was, you can click blue arrow button next to the object in the environment (upper right of RStudio). Another option is with the <code>class</code> function. Using <code>class</code> requires us to specify the data object and the variable <code>object$variable</code> with the <code>$</code>. The <code>summary</code> function is shorter as it only needs the object and returns the type for all variables in that object.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(catch_df<span class="op">$</span>catch_thousands)</code></pre></div>
 <p><strong>Exercise 2:</strong> Below we show the maxium catch by species. To not overwrite our <code>catch_df</code> dataframe we create a new object calling it <code>catch_df2</code></p>

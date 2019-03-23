@@ -517,6 +517,11 @@ catch_df %>%
 ```
 
 ##Solutions to Exercises
+**Data modeling assignment at end of Lecture 3**
+The ER model should look like this where code is the primary key in the region_def table and links to the Region column (foreign key) in the catch table. One region code in the region_def table is assigned to each of many records in the catch table.  
+
+![ER model`](images/ERmodel.jpg)
+
 **Exercise 1:**
 To find out what data type the catch_thousand variable was, you can click blue arrow button next to the object in the environment (upper right of RStudio). Another option is with the `class` function. Using `class` requires us to specify the data object and the variable `object$variable` with the `$`. The `summary` function is shorter as it only needs the object and returns the type for all variables in that object.  
 ```{r, eval = F}
