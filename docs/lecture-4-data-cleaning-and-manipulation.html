@@ -829,7 +829,8 @@ dates_df <span class="op">%&gt;%</span><span class="st"> </span>
                   <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
 region_defs &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.303.1&quot;</span>, <span class="dt">method =</span> <span class="st">&quot;libcurl&quot;</span>),
                         <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
-
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(tidyr)
 catch_df <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>All, <span class="op">-</span>notesRegCode) <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">gather</span>(species, catch, <span class="op">-</span>Region, <span class="op">-</span>Year) <span class="op">%&gt;%</span>
@@ -870,7 +871,24 @@ catch_df <span class="op">%&gt;%</span>
 </div>
 <p><strong>Exercise 1:</strong> To find out what data type the catch_thousand variable was, you can click blue arrow button next to the object in the environment (upper right of RStudio). Another option is with the <code>class</code> function. Using <code>class</code> requires us to specify the data object and the variable <code>object$variable</code> with the <code>$</code>. The <code>summary</code> function is shorter as it only needs the object and returns the type for all variables in that object.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(catch_df<span class="op">$</span>catch_thousands)</code></pre></div>
-<p><strong>Exercise 2:</strong> Below we show the maxium catch by species. To not overwrite our <code>catch_df</code> dataframe we create a new object calling it <code>catch_df2</code></p>
+<p><strong>Exercise 2:</strong> Recall, following the above steps after reading in the data, we dropped a few columns we don’t need and cleaned up a data entry error (this was part of Exercise 1). Then we reshaped the data from wide to long format. The following commands are copied from above and summarized below. You need to run these lines of code first to prepare the catch_df data for the exercises that follow.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#reading in data</span>
+catch_df &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1&quot;</span>, <span class="dt">method =</span> <span class="st">&quot;libcurl&quot;</span>), <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)
+
+<span class="co">#selecting just the columns we need</span>
+catch_df &lt;-<span class="st"> </span>catch_df <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(Region, Year, Chinook, Sockeye, Coho, Pink, Chum) 
+
+<span class="co">#cleaning a data entry error</span>
+catch_df &lt;-<span class="st"> </span>catch_df <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">catch_thousands =</span> <span class="kw">ifelse</span>(catch_thousands <span class="op">==</span><span class="st"> &quot;I&quot;</span>, <span class="dv">1</span>, catch_thousands),
+         <span class="dt">catch_thousands =</span> <span class="kw">as.integer</span>(catch_thousands))
+
+
+<span class="co">#reshaping to long format</span>
+catch_df &lt;-<span class="st"> </span>catch_df <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">gather</span>(species, catch, <span class="op">-</span>Region, <span class="op">-</span>Year)</code></pre></div>
+<p>Now we can calculate maxium catch by species. To not overwrite our <code>catch_df</code> dataframe we create a new object calling it <code>catch_df2</code></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">catch_df2 &lt;-<span class="st"> </span>catch_df <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">group_by</span>(species) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">summarise</span>(<span class="kw">max</span>(catch))</code></pre></div>
@@ -891,7 +909,7 @@ catch_df <span class="op">%&gt;%</span>
                         <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</code></pre></div>
 <p>If you need to split the city column into a <code>city</code> and <code>state</code> column you can do it with the <code>separate</code> function, where the first argument is the object, followed by the names you want for the columns to split <code>city</code> into, and lastly you need to specify what R needs to look for when splitting. In this example it is <code>sep= &quot; &quot;</code> as in space Remember, check the help if you don’t know how to specify a function.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cities_df2 &lt;-<span class="st"> </span>cities_df <span class="op">%&gt;%</span><span class="st"> </span>
-<span class="st">  </span><span class="kw">separate</span>(city, <span class="kw">c</span>(<span class="st">&quot;city&quot;</span>, <span class="st">&quot;state&quot;</span>), <span class="st">&quot; &quot;</span>)</code></pre></div>
+<span class="st">  </span><span class="kw">separate</span>(city, <span class="kw">c</span>(<span class="st">&quot;city&quot;</span>, <span class="st">&quot;state&quot;</span>), <span class="st">&quot; &quot;</span>)  <span class="co">#make sure here that there is a space between the last quotes</span></code></pre></div>
 <p><strong>Exercise 7:</strong> Uniting back to one column</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">cities_df3 &lt;-<span class="st"> </span>cities_df2 <span class="op">%&gt;%</span><span class="st"> </span>
 <span class="st">    </span><span class="kw">unite</span>(city, city, state, <span class="dt">sep =</span> <span class="st">&quot; &quot;</span>)</code></pre></div>

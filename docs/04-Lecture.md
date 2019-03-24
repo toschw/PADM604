@@ -789,7 +789,8 @@ catch_df <- read.csv(url("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df3
                   stringsAsFactors = FALSE)
 region_defs <- read.csv(url("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.303.1", method = "libcurl"),
                         stringsAsFactors = FALSE)
-
+library(dplyr)
+library(tidyr)
 catch_df %>%
   select(-All, -notesRegCode) %>% 
   gather(species, catch, -Region, -Year) %>%
@@ -840,7 +841,29 @@ class(catch_df$catch_thousands)
 ```
 
 **Exercise 2:**
-Below we show the maxium catch by species. To not overwrite our `catch_df` dataframe we create a new object calling it `catch_df2`
+Recall, following the above steps after reading in the data, we dropped a few columns we don't need and cleaned up a data entry error (this was part of Exercise 1). Then we reshaped the data from wide to long format. The following commands are copied from above and summarized below. You need to run these lines of code first to prepare the catch_df data for the exercises that follow. 
+
+
+```r
+#reading in data
+catch_df <- read.csv(url("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1", method = "libcurl"), stringsAsFactors = FALSE)
+
+#selecting just the columns we need
+catch_df <- catch_df %>% 
+  select(Region, Year, Chinook, Sockeye, Coho, Pink, Chum) 
+
+#cleaning a data entry error
+catch_df <- catch_df %>%
+  mutate(catch_thousands = ifelse(catch_thousands == "I", 1, catch_thousands),
+         catch_thousands = as.integer(catch_thousands))
+
+
+#reshaping to long format
+catch_df <- catch_df %>% 
+  gather(species, catch, -Region, -Year)
+```
+
+Now we can calculate maxium catch by species. To not overwrite our `catch_df` dataframe we create a new object calling it `catch_df2`
 
 ```r
 catch_df2 <- catch_df %>%
@@ -887,7 +910,7 @@ If you need to split the city column into a `city` and `state` column you can do
 
 ```r
 cities_df2 <- cities_df %>% 
-  separate(city, c("city", "state"), " ")
+  separate(city, c("city", "state"), " ")  #make sure here that there is a space between the last quotes
 ```
  
 **Exercise 7:**
