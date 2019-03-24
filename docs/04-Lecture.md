@@ -828,8 +828,11 @@ catch_df %>%
 ##Solutions to Exercises
 **Data modeling assignment at end of Lecture 3** 
 
-primary key - Region
-foreign key - code  
+primary key - code in the regions_def table
+foreign key - Region in the catch table  
+
+Catch is assigned to one and only one region.
+Zero or many catches (across years and species) are associated with a region. 
 
 ![ER model](images/ERmodel.jpg)
 
