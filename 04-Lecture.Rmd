@@ -534,7 +534,7 @@ class(catch_df$catch_thousands)
 **Exercise 2:**
 Recall, following the above steps after reading in the data, we dropped a few columns we don't need and cleaned up a data entry error (this was part of Exercise 1). Then we reshaped the data from wide to long format. The following commands are copied from above and summarized below. You need to run these lines of code first to prepare the catch_df data for the exercises that follow. 
 
-```{r}
+```{r, eval = F}
 #reading in data
 catch_df <- read.csv(url("https://knb.ecoinformatics.org/knb/d1/mn/v2/object/df35b.302.1", method = "libcurl"), stringsAsFactors = FALSE)
 
